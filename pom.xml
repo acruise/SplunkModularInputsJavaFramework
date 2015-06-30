@@ -1,0 +1,41 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.splunk</groupId>
+    <artifactId>modinput</artifactId>
+    <version>1</version>
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.16</version>
+            </dependency>
+            <dependency>
+                <groupId>com.splunk</groupId>
+                <artifactId>splunk_tlsv12</artifactId>
+                <version>1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>core</module>
+
+        <module>amqp</module>
+        <module>coap</module>
+        <module>helloworld</module>
+        <module>jms</module>
+        <module>kafka</module>
+
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>localrepo</id>
+            <url>file://${basedir}/repo</url>
+        </repository>
+    </repositories>
+</project>
+
