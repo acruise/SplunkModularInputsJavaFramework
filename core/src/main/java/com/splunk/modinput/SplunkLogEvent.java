@@ -1,5 +1,7 @@
 package com.splunk.modinput;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import java.util.Date;
 
 /**
@@ -1361,14 +1363,15 @@ public class SplunkLogEvent {
 	 * @param value
 	 */
 	public void addPair(String key, String value) {
+		if (quoteValues) {
+			final String qvalue = StringEscapeUtils.escapeJava(value);
 
-		if (quoteValues)
 			this.eventMessage.append(key).append(KVDELIM).append(QUOTE)
-					.append(value).append(QUOTE).append(PAIRDELIM);
-		else
+					.append(qvalue).append(QUOTE).append(PAIRDELIM);
+		} else {
 			this.eventMessage.append(key).append(KVDELIM).append(value)
 					.append(PAIRDELIM);
-
+		}
 	}
 
 	@Override
