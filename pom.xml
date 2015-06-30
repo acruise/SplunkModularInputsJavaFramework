@@ -27,9 +27,30 @@
         <module>coap</module>
         <module>helloworld</module>
         <module>jms</module>
+        <module>jmx</module>
         <module>kafka</module>
-
+        <module>kinesis</module>
+        <module>mqtt</module>
+        <module>protocol</module>
+        <module>webspheremq</module>
     </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
 
     <repositories>
         <repository>
